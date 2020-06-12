@@ -22,14 +22,14 @@ jobs:
           workspace: workspace-first-task
         file: myapp-test-repo/task/first_task.yml
 
-#      - task: second-task
-#        input_mapping:
-#          # NOTE: We are mapping the previous _unique task output_ "workspace-first-task"
-#          #       to the _common task input_ "repo"
-#          repo: workspace-first-task
+      - task: second-task
+        input_mapping:
+          # NOTE: We are mapping the previous _unique task output_ "workspace-first-task"
+          #       to the _common task input_ "repo"
+          repo: workspace-first-task
 #          version: latest-version
-#        output_mapping:
-#          # NOTE: We are renaming the _common output_ "workspace"
-#          #       to something unique "workspace-second-task"
-#          workspace: workspace-second-task
-#        file: some-repo/ci/second-task.yml
+        output_mapping:
+          # NOTE: We are renaming the _common output_ "workspace"
+          #       to something unique "workspace-second-task"
+          workspace: workspace-second-task
+        file: some-repo/ci/second-task.yml
