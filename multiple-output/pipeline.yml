@@ -1,0 +1,35 @@
+# pipeline.yml
+resources:
+  - name: myapp-test-repo
+    type: git
+    source:
+      uri: ((myapp-test-git.repository-uri))
+      branch: ((myapp-test-git.branch))
+
+jobs:
+  - name: myapp-job
+    plan:
+      - get: myapp-test-repo
+        trigger: true
+#      - get: latest-version
+      - task: first-task
+        input_mapping:
+          repo: myapp-test-repo
+#          version: latest-version
+#        output_mapping:
+          # NOTE: We are renaming the _common task output_ "workspace"
+          #       to something unique "workspace-first-task"
+          workspace: workspace-first-task
+        file: myapp-test-repo/task/first-task.yml
+
+      - task: second-task
+        input_mapping:
+          # NOTE: We are mapping the previous _unique task output_ "workspace-first-task"
+          #       to the _common task input_ "repo"
+          repo: workspace-first-task
+          version: latest-version
+        output_mapping:
+          # NOTE: We are renaming the _common output_ "workspace"
+          #       to something unique "workspace-second-task"
+          workspace: workspace-second-task
+        file: some-repo/ci/second-task.yml

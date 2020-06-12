@@ -1,0 +1,4 @@
+---
+myapp-test-git:
+  repository-uri: https://github.com/dbha/myapp-test.git
+  branch: master
