@@ -3,8 +3,8 @@ resources:
   - name: myapp-test-repo
     type: git
     source:
-      uri: ((repository-uri))
-      branch: ((branch))
+      uri: ((git.myapp_test.uri))
+      branch: ((git.myapp_test.branch))
 
 jobs:
   - name: myapp-job
