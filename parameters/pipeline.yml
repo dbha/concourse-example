@@ -16,6 +16,9 @@ resources:
 jobs:
   - name: show-animal-names
     plan:
+      - get: myapp-test-repo
+      - get: parameters
+
       - task: show-animal-names
         input_mapping:
           vars: parameters
