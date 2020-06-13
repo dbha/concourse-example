@@ -22,5 +22,5 @@ jobs:
         input_mapping:
           vars: parameters
         params:
-          PARAMS_FILE: vars/myapp-test/pipeline_vars/params.yml
+          PARAMS_FILE: vars/pipeline_vars/params.yml
         file: myapp-test-repo/task/parameter_task.yml
