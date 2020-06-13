@@ -1,0 +1,25 @@
+---
+# pipeline.yml
+resources:
+  - name: myapp-test-repo
+    type: git
+    source:
+      uri: ((git.myapp_test.uri))
+      branch: ((git.myapp_test.branch))
+
+resources:
+  - name: parameters
+    type: git
+    source:
+      uri: ((git.myapp_test.uri))
+      branch: ((git.myapp_test.branch))
+
+jobs:
+  - name: show-animal-names
+    plan:
+      - task: show-animal-names
+        input_mapping:
+          vars: parameters
+        params:
+          PARAMS_FILE: vars/myapp-test/pipeline_vars/params.yml
+        file: myapp-test-repo/task/parameter_task.yml
