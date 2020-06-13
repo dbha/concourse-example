@@ -26,7 +26,7 @@ jobs:
         input_mapping:
           # NOTE: We are mapping the previous _unique task output_ "workspace-first-task"
           #       to the _common task input_ "repo"
-          repo: workspace-first-task
+          repo1: workspace-first-task
 #          version: latest-version
         output_mapping:
           # NOTE: We are renaming the _common output_ "workspace"
