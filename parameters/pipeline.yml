@@ -7,7 +7,6 @@ resources:
       uri: ((git.myapp_test.uri))
       branch: ((git.myapp_test.branch))
 
-resources:
   - name: parameters
     type: git
     source:
