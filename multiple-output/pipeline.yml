@@ -32,4 +32,4 @@ jobs:
           # NOTE: We are renaming the _common output_ "workspace"
           #       to something unique "workspace-second-task"
           workspace: workspace-second-task
-        file: workspace-first-task/task/second-task.yml
+        file: myapp-test-repo/task/second_task.yml
