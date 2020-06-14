@@ -19,8 +19,8 @@ jobs:
       - get: parameters
 
       - task: show-animal-names
-        input_mapping:
-          vars: parameters
+#        input_mapping:
+#          vars: parameters
         params:
           PARAMS_FILE: vars/pipeline_vars/params.yml
           CONFIG_FILE: vars/pipeline_vars/config.yml
