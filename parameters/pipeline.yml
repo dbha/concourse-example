@@ -23,4 +23,6 @@ jobs:
           vars: parameters
         params:
           PARAMS_FILE: vars/pipeline_vars/params.yml
+          CONFIG_FILE: vars/pipeline_vars/config.yml
+          PARAMS_PATH: vars/pipeline_vars
         file: myapp-test-repo/task/parameter_task.yml
